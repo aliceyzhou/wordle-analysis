@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<title>Wordle Stats</title>
+<style>
+    body {
+        background-color: #222222;
+        font-family: 'Clear Sans', 'Andale Mono','Helvetica Neue', Arial, sans-serif;
+        color: lightgrey;
+    }
+    #everything {
+        width: 950px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    img {
+        width: 500px;
+        height: auto;
+    }
+    a {
+        color: lightgrey;
+        text-decoration: none;
+    }
+    .block {
+        float: left;
+        padding: 0px 30px 20px;
+        margin: 10px;
+        border: 2px solid gray;
+        border-radius: 10px;
+    }
+    .block:hover {
+        margin: 10px 10px 10px 10px;
+        background-color: #444;
+    }
+    #header {
+        text-align: center;
+    }
+    #redirect {
+        width: 150px;
+        margin: 0px auto 20px;
+        padding: 0px 10px;
+        float: none;
+    }
+    #redirect:hover {
+        width: 155px;
+        padding: 0px 20px;
+        background-color: #444;
+    }
+
+    #footer {
+        text-align: center;
+    }
+    
+    .clearfloat {
+        clear: both;
+    }
+
+    table {
+        border-collapse: collapse;
+        color: black;
+        margin: 0 auto 7px;
+    }
+
+    th {
+        border: 1px solid black;
+        padding: 5px 0px;
+        background-color: lightgrey;
+        width: 100px;
+    }
+
+    td {
+        border: 1px solid ghostwhite;
+        padding: 5px;
+        vertical-align: top;
+        color: ghostwhite;
+    }
+
+</style>
+<script src=""></script>
+<body>
+
+<div id="header">
+    <h1>Wordle Stats</h1>
+</div>
+
+<hr>
+
+<div id="everything">
+
+
+<div id="distributions" class="block">
+    <h2>Letter Distribution</h2>
+    <img src="wordle-distribution.png" alt="graph">
+</div>
+
+<div id="table" class="block">
+    <h2>Most Common Letters</h2>
+
+    <table>
+    <tr>
+    <th>Letter</th>
+    <th>Count</th>
+    </tr>
+
+    <tr>
+    <td>S</td>
+    <td>5996</td>
+    </tr>
+
+    <tr>
+    <td>E</td>
+    <td>5429</td>
+    </tr>
+
+    <tr>
+    <td>A</td>
+    <td>5011</td>
+    </tr>
+
+    <tr>
+    <td>O</td>
+    <td>3684</td>
+    </tr>
+
+    <tr>
+    <td>R</td>
+    <td>3259</td>
+    </tr>
+
+    <tr>
+    <td>I</td>
+    <td>3088</td>
+    </tr>
+
+    <tr>
+    <td>L</td>
+    <td>2652</td>
+    </tr>
+
+    <tr>
+    <td>T</td>
+    <td>2566</td>
+    </tr>
+
+    <tr>
+    <td>D</td>
+    <td>2060</td>
+    </tr>
+
+    <tr>
+    <td>U</td>
+    <td>2044</td>
+    </tr>
+
+
+    </table>    
+</div>
+
+<div class="clearfloat"></div>
+
+<div id="explanation" class="block">
+    <h2>Analysis</h2>
+    <p>Using Python, I found the distribution of letters for the words officially recognized by Wordle. We can clearly see that some letters are more likely to occur than others; the most common letters are S, E, A, O, and R, while the least common are Q, J, X, Z, and V. It is worth noting that these numbers do not account for duplicates - for example, the letter L is overrepresented as it often appears twice in the same word and guessing T would be more likely to yield success.</p>
+    <p>Based on these frequencies, your 'best' first guess would likely be one of the following: SOARE, ROATE, SALET, REAST, or RAISE. If you have no interest in winning, feel free try words such as QAJAQ, IMMIX, or JAZZY!</p>
+</div>
+
+<div class="clearfloat"></div>
+
+<div id="redirect" class="block">
+    <p><a href="https://www.nytimes.com/games/wordle/index.html" target="_blank">Play Wordle!</a></p>
+</div>
+
+</div>
+
+<hr>
+
+<div id="footer">
+<p> (c) 2022 Alice Zhou <br> <a href="" target="_blank"><em>View Python code here!</em></a> </p>
+</div>
+
+</body>
+</html>
