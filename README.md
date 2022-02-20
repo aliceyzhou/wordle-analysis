@@ -10,4 +10,5 @@ Based on these frequencies, your 'best' first guess would likely be one of the f
 If you have no interest in winning or simply enjoy a challenge, feel free try words such as QAJAQ, IMMIX, or JAZZY!
 
 To see this information presented with graphs, tables, and more detailed analysis: https://aliceyzhou.github.io/wordle-analysis/
+
 To see how I got this information, check out the .ipynb file!
