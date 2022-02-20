@@ -23,14 +23,14 @@
         text-decoration: none;
     }
     .block {
-        float: left;
+        display: inline-block;
         padding: 0px 30px 20px;
-        margin: 10px;
+        margin: 10px auto;
         border: 2px solid gray;
         border-radius: 10px;
+        vertical-align: top;
     }
     .block:hover {
-        margin: 10px 10px 10px 10px;
         background-color: #444;
     }
     #header {
@@ -88,9 +88,16 @@
 
 <div id="everything">
 
+<div id="introduction" class="block">
+    <h2>Introduction</h2>
+    <p>Wordle has recently been taking the world by storm, as this seemingly simple game challenges users to think creatively. Have you ever wondered why some people tend to guess words faster and more consistently? The secret is all in the distribution.</p>
+    
+</div>
+
+<div id="original">
 
 <div id="distributions" class="block">
-    <h2>Letter Distribution</h2>
+    <h2>Total Letter Distribution</h2>
     <img src="wordle-distribution.png" alt="graph">
 </div>
 
@@ -161,11 +168,102 @@
 
 <div id="explanation" class="block">
     <h2>Analysis</h2>
-    <p>Using Python, I found the distribution of letters for the words officially recognized by Wordle. We can clearly see that some letters are more likely to occur than others; the most common letters are S, E, A, O, and R, while the least common are Q, J, X, Z, and V. It is worth noting that these numbers do not account for duplicates - for example, the letter L is overrepresented as it often appears twice in the same word and guessing T would be more likely to yield success.</p>
-    <p>Based on these frequencies, your 'best' first guess would likely be one of the following: SOARE, ROATE, SALET, REAST, or RAISE. If you have no interest in winning, feel free try words such as QAJAQ, IMMIX, or JAZZY!</p>
+    <p>Using Python, I found the distribution of letters for the words officially recognized by Wordle. We can clearly see that some letters are more likely to occur than others; the most common letters are S, E, A, O, and R, while the least common are Q, J, X, Z, and V. It is worth noting that these numbers do not account for duplicates - for example, the word HELLO would count L twice. </p>
+    <p>Let's see what we can do about this...</p>
+    
 </div>
 
 <div class="clearfloat"></div>
+
+</div>
+
+<div id="newer">
+<div id="distributions" class="block">
+    <h2>Unique Letter Distribution</h2>
+    <img src="appearances.png" alt="graph">
+</div>
+
+<div id="table" class="block">
+    <h2>Words It Appears In</h2>
+
+    <table>
+    <tr>
+    <th>Letter</th>
+    <th>Words</th>
+    </tr>
+
+    <tr>
+    <td>S</td>
+    <td>5318</td>
+    </tr>
+
+    <tr>
+    <td>E</td>
+    <td>4649</td>
+    </tr>
+
+    <tr>
+    <td>A</td>
+    <td>4421</td>
+    </tr>
+
+    <tr>
+    <td>O</td>
+    <td>3238</td>
+    </tr>
+
+    <tr>
+    <td>R</td>
+    <td>3072</td>
+    </tr>
+
+    <tr>
+    <td>I</td>
+    <td>2942</td>
+    </tr>
+
+    <tr>
+    <td>L</td>
+    <td>2466</td>
+    </tr>
+
+    <tr>
+    <td>T</td>
+    <td>2366</td>
+    </tr>
+
+    <tr>
+    <td>N</td>
+    <td>2237</td>
+    </tr>
+
+    <tr>
+    <td>U</td>
+    <td>1979</td>
+    </tr>
+
+
+    </table>    
+</div>
+
+<div class="clearfloat"></div>
+
+<div id="explanation" class="block">
+    <h2>Analysis</h2>
+    <p>In this second set of data, we count the actual number of words each letter appears in. Unsurprisingly, most place values of the most common letters did not change. </p>
+    <p>Interesting notes: <br>In the second list, N is ranked higher than D, meaning D is more prone to appear multiple times in one word. <br> The values of X and Q both changed by 1, because there is only one word with two Xs (XEROX) and one with two Qs (QAJAQ).</p>
+    
+</div>
+
+<div id="conclusion" class="block">
+    <h2>Conclusion</h2>
+    <p>Based on these frequencies, your 'best' first guess would likely be one of the following: SOARE, ROATE, SALET, REAST, or RAISE, as the chance that the solution does not contain any of these letters is exceedingly rare. </p>
+    <p>If you have no interest in winning or simply enjoy a challenge, feel free try words such as QAJAQ, IMMIX, or JAZZY!</p>
+    
+</div>
+
+<div class="clearfloat"></div>
+</div>
 
 <div id="redirect" class="block">
     <p><a href="https://www.nytimes.com/games/wordle/index.html" target="_blank">Play Wordle!</a></p>
@@ -176,7 +274,8 @@
 <hr>
 
 <div id="footer">
-<p> (c) 2022 Alice Zhou <br> <a href="https://github.com/aliceyzhou/wordle-analysis/blob/main/wordle%20analysis.ipynb" target="_blank"><em>View Python code here!</em></a> </p>
+<p> (c) 2022 Alice Zhou </p>
+<p> <a href="" target="_blank"><em>View More Information and Python code here!</em></a> </p>
 </div>
 
 </body>
